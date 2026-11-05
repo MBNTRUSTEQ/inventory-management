@@ -513,13 +513,10 @@ export default {
   font-size: 1rem;
 }
 
-.chart-card {
-  margin-bottom: 1.75rem;
-}
-
 .chart-legend {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
   font-size: 0.875rem;
 }
 
@@ -545,9 +542,9 @@ export default {
 
 .stats-grid-finance {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
 }
 
 .revenue-card {
@@ -611,12 +608,15 @@ export default {
 
 .chart-container {
   padding: 1.5rem 0;
+  /* Twelve month groups need room; scroll inside the card on narrow screens instead of the page */
+  overflow-x: auto;
 }
 
 .bar-chart {
   display: flex;
   gap: 1.5rem;
   height: 350px;
+  min-width: 520px;
 }
 
 .y-axis {
@@ -694,7 +694,7 @@ export default {
 
 .two-column-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(450px, 100%), 1fr));
   gap: 1.75rem;
 }
 

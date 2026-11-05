@@ -225,35 +225,6 @@ export default {
 </script>
 
 <style scoped>
-.page-header {
-  margin-bottom: 1.5rem;
-}
-
-.page-header h2 {
-  margin-bottom: 0.25rem;
-}
-
-.page-header p {
-  color: #64748b;
-  font-size: 0.875rem;
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.card-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #0f172a;
-  margin: 0;
-}
-
 .search-box {
   position: relative;
   display: flex;
@@ -261,31 +232,44 @@ export default {
   min-width: 300px;
 }
 
+@media (max-width: 767px) {
+  /* The 300px minimum would overflow a phone-width card header */
+  .search-box {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
 .search-icon {
   position: absolute;
   left: 0.75rem;
   width: 18px;
   height: 18px;
-  color: #94a3b8;
+  color: var(--color-text-muted);
   pointer-events: none;
 }
 
 .search-input {
   width: 100%;
-  padding: 0.5rem 2.5rem 0.5rem 2.5rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  font-size: 0.875rem;
-  color: #0f172a;
-  background: #f8fafc;
-  transition: all 0.2s;
+  height: 36px;
+  padding: 0 var(--space-10);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  background: var(--color-surface-muted);
+  transition: border-color var(--duration-fast), box-shadow var(--duration-fast), background var(--duration-fast);
+}
+
+.search-input:hover {
+  border-color: var(--color-border-strong);
 }
 
 .search-input:focus {
   outline: none;
-  border-color: #3b82f6;
-  background: white;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: var(--color-primary);
+  background: var(--color-surface);
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
 }
 
 .search-input::placeholder {
@@ -317,23 +301,12 @@ export default {
   height: 18px;
 }
 
-.loading,
-.error {
-  padding: 2rem;
-  text-align: center;
-  color: #64748b;
-}
-
-.error {
-  color: #ef4444;
-}
-
 .clickable-row {
   cursor: pointer;
-  transition: background-color 0.15s ease;
 }
 
-.clickable-row:hover {
-  background: #eff6ff !important;
+/* Highlight on the cells: the shared table styles paint hover backgrounds on td, which would cover a tr background */
+.clickable-row:hover td {
+  background: var(--color-primary-soft);
 }
 </style>

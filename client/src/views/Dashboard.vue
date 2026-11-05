@@ -727,13 +727,6 @@ export default {
 </script>
 
 <style scoped>
-.page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
 .header-meta {
   font-size: 0.813rem;
   color: #64748b;
@@ -759,10 +752,11 @@ export default {
 }
 
 .kpi-card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-xs);
 }
 
 .kpi-header {
@@ -812,9 +806,16 @@ export default {
 
 .charts-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-  margin-bottom: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+/* Single column below 1280px: the sidebar takes 240px, so two chart cards no longer fit side by side at 1024 */
+@media (max-width: 1279px) {
+  .charts-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .chart-card.full-width {
@@ -865,6 +866,13 @@ export default {
   align-items: center;
   padding: 1rem;
   min-height: 240px;
+}
+
+/* Donut and metrics stack on narrow screens instead of forcing two 200px+ columns */
+@media (max-width: 639px) {
+  .order-health-container {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .order-health-chart {
