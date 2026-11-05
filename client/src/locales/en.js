@@ -7,7 +7,16 @@ export default {
     finance: 'Finance',
     demandForecast: 'Demand Forecast',
     companyName: 'Catalyst Components',
-    subtitle: 'Inventory Management System'
+    subtitle: 'Inventory Management System',
+    reports: 'Reports',
+    mainNavigation: 'Main navigation',
+    sectionOperations: 'Operations',
+    sectionInsights: 'Insights',
+    collapseSidebar: 'Collapse sidebar',
+    expandSidebar: 'Expand sidebar',
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
+    skipToContent: 'Skip to content'
   },
 
   // Dashboard
@@ -302,6 +311,35 @@ export default {
     dueDate: 'Due Date',
     addTask: 'Add Task',
     noTasks: 'No tasks yet. Add your first task above!'
+  },
+
+  // Purchase Order Modal
+  purchaseOrder: {
+    createTitle: 'Create Purchase Order',
+    viewTitle: 'Purchase Order Details',
+    sku: 'SKU',
+    shortage: 'Shortage',
+    units: 'units',
+    supplier: 'Supplier Name',
+    quantity: 'Quantity',
+    unitCost: 'Unit Cost (USD)',
+    expectedDelivery: 'Expected Delivery Date',
+    notes: 'Notes (optional)',
+    notesLabel: 'Notes',
+    total: 'Total',
+    submit: 'Create Purchase Order',
+    submitting: 'Creating...',
+    poId: 'PO ID',
+    status: 'Status',
+    createdDate: 'Created',
+    notFound: 'No purchase order found for this item.',
+    loadFailed: 'Failed to load purchase order.',
+    createFailed: 'Failed to create purchase order.',
+    alreadyExists: 'A purchase order already exists for this item.',
+    errSupplier: 'Supplier name is required.',
+    errQuantity: 'Quantity must be a whole number greater than 0.',
+    errUnitCost: 'Unit cost must be greater than 0.',
+    errDate: 'A valid expected delivery date is required.'
   },
 
   // Language

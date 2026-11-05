@@ -123,11 +123,12 @@ const handleLogout = () => {
 .profile-button {
   display: flex;
   align-items: center;
-  gap: 0.625rem;
-  padding: 0.5rem 0.875rem;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  gap: var(--space-2);
+  height: 36px;
+  padding: 0 var(--space-2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: inherit;
@@ -139,8 +140,8 @@ const handleLogout = () => {
 }
 
 .avatar {
-  width: 32px;
-  height: 32px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
   color: white;
@@ -172,11 +173,12 @@ const handleLogout = () => {
   top: calc(100% + 0.5rem);
   right: 0;
   min-width: 280px;
+  max-width: calc(100vw - 2 * var(--space-4));
   background: white;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-dropdown);
   overflow: hidden;
 }
 
@@ -265,6 +267,19 @@ const handleLogout = () => {
 
 .dropdown-item.logout:hover {
   background: #fef2f2;
+}
+
+/* Phones: avatar-only trigger so the top bar fits */
+@media (max-width: 767px) {
+  .profile-name {
+    /* visually hidden, still announced by screen readers */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
 }
 
 .task-badge {

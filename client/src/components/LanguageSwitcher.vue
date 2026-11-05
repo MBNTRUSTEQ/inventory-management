@@ -96,11 +96,12 @@ const selectLanguage = (locale) => {
 .language-button {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.875rem;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  gap: var(--space-2);
+  height: 36px;
+  padding: 0 var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: inherit;
@@ -122,6 +123,19 @@ const selectLanguage = (locale) => {
   font-weight: 500;
 }
 
+/* Phones: icon + chevron only so the top bar fits */
+@media (max-width: 767px) {
+  .language-label {
+    /* visually hidden, still announced by screen readers */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
 .chevron {
   color: #64748b;
   transition: transform 0.2s ease;
@@ -140,8 +154,8 @@ const selectLanguage = (locale) => {
   background: white;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-dropdown);
   overflow: hidden;
 }
 

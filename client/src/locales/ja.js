@@ -7,7 +7,16 @@ export default {
     finance: '財務',
     demandForecast: '需要予測',
     companyName: '触媒コンポーネンツ',
-    subtitle: '在庫管理システム'
+    subtitle: '在庫管理システム',
+    reports: 'レポート',
+    mainNavigation: 'メインナビゲーション',
+    sectionOperations: 'オペレーション',
+    sectionInsights: 'インサイト',
+    collapseSidebar: 'サイドバーを折りたたむ',
+    expandSidebar: 'サイドバーを展開',
+    openMenu: 'メニューを開く',
+    closeMenu: 'メニューを閉じる',
+    skipToContent: 'メインコンテンツへスキップ'
   },
 
   // Dashboard
@@ -302,6 +311,35 @@ export default {
     dueDate: '期限',
     addTask: 'タスクを追加',
     noTasks: 'タスクがありません。上記からタスクを追加してください！'
+  },
+
+  // Purchase Order Modal
+  purchaseOrder: {
+    createTitle: '発注書を作成',
+    viewTitle: '発注書の詳細',
+    sku: 'SKU',
+    shortage: '不足数',
+    units: '個',
+    supplier: '仕入先名',
+    quantity: '数量',
+    unitCost: '単価 (USD)',
+    expectedDelivery: '納品予定日',
+    notes: '備考（任意）',
+    notesLabel: '備考',
+    total: '合計',
+    submit: '発注書を作成',
+    submitting: '作成中...',
+    poId: '発注書ID',
+    status: 'ステータス',
+    createdDate: '作成日',
+    notFound: 'この品目の発注書は見つかりません。',
+    loadFailed: '発注書の読み込みに失敗しました。',
+    createFailed: '発注書の作成に失敗しました。',
+    alreadyExists: 'この品目にはすでに発注書があります。',
+    errSupplier: '仕入先名は必須です。',
+    errQuantity: '数量は0より大きい整数で入力してください。',
+    errUnitCost: '単価は0より大きい値で入力してください。',
+    errDate: '有効な納品予定日を入力してください。'
   },
 
   // Language
